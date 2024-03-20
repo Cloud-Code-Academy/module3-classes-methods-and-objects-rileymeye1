@@ -110,16 +110,18 @@ public with sharing class ClassesObjectsMethods {
      */
     public static Integer countVowels(String str) {
         // Initialize the result Integer
-
-        /*
-        for () {
+        Integer result = 0;
+        
+        for (Integer i = 0, length = str.length(); i < length; i++) {
             // get individual characters from the string - hint use substring or split
+            String subString = str.substring(i, i + 1);
             // check if the character is a vowel
+            if (subString == 'a' || subString == 'e' || subString == 'i' || subString == 'o' || subString == 'u') {
+                result++;
+            }
             // if it is a vowel, increment the result Integer
         }
-        */
-
-        return null; // Replace null with the variable you used to store the result
+        return result; // Replace null with the variable you used to store the result
     }
 
     /**
