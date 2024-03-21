@@ -252,19 +252,21 @@ public with sharing class ClassesObjectsMethods {
      */
     public class Book {
         // Declare three public instance variables - title, author, pages
-        // title
-        // author
-        // pages
+        public String title = '';
+        public String author = '';
+        public Integer pages = 0;
     
         // Book constructor to initialize the title and author
-        public Book() {
-            // Initialize the title and author
+        public Book(String title, String author) {
+            this.title = title;
+            this.author = author;
         }
     
         // Method that returns the details of the book
         public String getBookDetails() {
             // return A string containing the details of the book in the format "Title: <title>, Author: <author>"
-            return null; // Replace null with the variable you used to store the result
+            String bookDetails = 'Title: ' + this.title + ', ' + 'Author: ' + this.author;
+            return bookDetails;
         }
     }
     
@@ -277,11 +279,11 @@ public with sharing class ClassesObjectsMethods {
      */
     public static String createAndGetBookDetails() {
         // Create a Book object with title "A Brief History of Time" and author "Stephen Hawking"
-
+        Book myBook = new Book('A Brief History of Time', 'Stephen Hawking');
         // Call the getBookDetails method on the book object to get the details of the book
-
+        String myBookDetails = mybook.getBookDetails();
         // Return the details of the book
-        return null; // Replace null with the variable you used to store the result
+        return myBookDetails; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -295,18 +297,19 @@ public with sharing class ClassesObjectsMethods {
      */
     public static List<Book> generateBookList(Book myBook1) {
         // Create a list of books
-
+        List<Book> bookList = new List<Book>();
         // Update the title and author of myBook1
-
+        myBook1.title = 'Harry Potter and the Chamber of Secrets';
+        mybook1.author = 'J.K. Rowling';
         // Update the pages for myBook1 to 352
-
+        myBook1.pages = 352;
+        bookList.add(myBook1);
         // Create a new Book object with title "A Brief History of Time" and author "Stephen Hawking"
-
+        Book myBook2 = new Book('A Brief History of Time', 'Stephen Hawking');
         // Update the pages for A Brief History of Time to 256
-
-        // Add the book to the list
-        
-        return null; // Replace null with the variable you used to store the result      
+        myBook2.pages = 256;
+        bookList.add(myBook2);
+        return bookList; // Replace null with the variable you used to store the result   
     }
 
 
@@ -319,20 +322,38 @@ public with sharing class ClassesObjectsMethods {
      */
     public class Person {
         // Declare private two instance variables - (TEXT) name and (Number) age
-        
+        private String name = '';
+        private Integer age = 0;
         // Constructor to initialize the name and age
-    
+        public person (String name, Integer age) {
+            this.name = name;
+            this.age = age;
+        }
         // Method introduceYourself that returns the details of the person        
         // Return a string in the format "Hello, my name is <name> and I am <age> years old."
         // For example, introduceYourself() should return a string like "Hello, my name is John Doe and I am 28 years old."
-
+        public String introduceYourself() {
+            String introduction = 'Hello, my name is ' + this.name + ' and I am ' + this.age + ' years old.';
+            return introduction;
+        }
         // Getter method that returns the name of the person
-
+        public String getName() {
+            return this.name;
+        }
         // Getter method that returns the age of the person
-
+        public Integer getAge() {
+            return this.age;
+        }
         // Setter method that sets the name of the person
-
+        public String setName(String name) {
+            this.name = name;
+            return this.name;
+        }
         // Setter method that sets the age of the person
+        public Integer setAge(Integer age) {
+            this.age = age;
+            return this.age;
+        }
     }
 
     /**
@@ -346,14 +367,14 @@ public with sharing class ClassesObjectsMethods {
         List<String> results = new List<String>();
         // Create a new instance of Person class
         // Name the person 'John Doe' and set the age to 28
-
+        Person person1 = new Person('John Doe', 28);
         // Add the details of the person using the introduceYourself method
-
+        results.add(person1.introduceYourself());
         // Get the name of the person using the getter method and add it to the list
-
+        results.add(person1.getName());
         // Get the age of the person using the getter method and add it to the list
-        
-        return null; // Replace null with the variable you used to store the result
+        results.add(String.valueOf(person1.getAge()));
+        return results; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -365,9 +386,9 @@ public with sharing class ClassesObjectsMethods {
      */
     public static Person createPerson(String name, Integer age) {
         // Create a new instance of the Person class using the provided name and age
-        
+        Person newPerson = new Person(name, age);
         // Return the new instance of the Person class
-        return null; // Replace null with the variable you used to store the result
+        return newPerson; // Replace null with the variable you used to store the result
     }
 
     /**
