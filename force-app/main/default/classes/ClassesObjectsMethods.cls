@@ -173,10 +173,16 @@ public with sharing class ClassesObjectsMethods {
      * @return A integer between 50 and 100.
      */
     public static Integer generateRandomNumber() {
-        // Use Math class to generate number between 50 and 100
+        // Variaible to store the random number generated
+        Integer randomNumber;
 
-        // Return the random integer
-        return null; // Replace null with the variable you used to store the result
+        do {
+            // Generates a random number between 0.00 to 100.00 as a Double and then casts it to an Integer and sets randomNumber = to that value
+            randomNumber = Integer.valueOf(Math.random() * 100);
+        }
+        while (randomNumber < 50); // forces the loop to only exit if the number is between 50 to 100
+        
+        return randomNumber; // Return the random integer
     }
 
     /**
