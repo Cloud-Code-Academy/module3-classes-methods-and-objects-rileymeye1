@@ -297,9 +297,10 @@ public with sharing class ClassesObjectsMethods {
      */
     public static List<Book> generateBookList(Book myBook1) {
         // Create a list of books
-        List<String> bookList = new List<String>();
+        List<Book> bookList = new List<Book>();
         // Update the title and author of myBook1
-        Book myBook1 = new Book('Harry Potter and the Chamber of Secrets', 'J.K. Rowling');
+        myBook1.title = 'Harry Potter and the Chamber of Secrets';
+        mybook1.author = 'J.K. Rowling';
         // Update the pages for myBook1 to 352
         myBook1.pages = 352;
         bookList.add(myBook1);
@@ -346,10 +347,12 @@ public with sharing class ClassesObjectsMethods {
         // Setter method that sets the name of the person
         public String setName(String name) {
             this.name = name;
+            return this.name;
         }
         // Setter method that sets the age of the person
         public Integer setAge(Integer age) {
             this.age = age;
+            return this.age;
         }
     }
 
@@ -370,7 +373,7 @@ public with sharing class ClassesObjectsMethods {
         // Get the name of the person using the getter method and add it to the list
         results.add(person1.getName());
         // Get the age of the person using the getter method and add it to the list
-        results.add(person1.getAge());
+        results.add(String.valueOf(person1.getAge()));
         return results; // Replace null with the variable you used to store the result
     }
 
